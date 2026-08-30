@@ -37,8 +37,7 @@
 
 ## Connect with me  
 <div align="center">
-<a href="https://instagram.com/lil_cherry
-.on.top" target="_blank">
+<a href="https://instagram.com/yash_w1n_" target="_blank">
 <img src=https://img.shields.io/badge/instagram-%23000000.svg?&style=for-the-badge&logo=instagram&logoColor=white alt=instagram style="margin-bottom: 5px;" />
 </a>
 <a href="https://stackoverflow.com/users/17261521" target="_blank">
