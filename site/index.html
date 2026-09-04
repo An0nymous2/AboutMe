@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yashwin — developer and curious maker.">
+  <meta name="theme-color" content="#f5f5f7">
+  <meta property="og:title" content="Yashwin — Portfolio">
+  <meta property="og:description" content="A selected collection of projects by Yashwin.">
+  <meta property="og:type" content="website">
+  <title>About Me | TheRiddler</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Bright, compact, Apple-inspired layer. The colour-mode button still exposes dark mode. */
+    body.light{--bg:#f5f5f7;--surface:rgba(255,255,255,.72);--text:#1d1d1f;--muted:#6e6e73;--line:rgba(29,29,31,.12);--lime:#527a00;--violet:#5e5ce6;--coral:#d45242;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Manrope",sans-serif}
+    body.light .site-header{position:sticky;top:0;background:rgba(245,245,247,.72);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%)}
+    body.light .hero-art{background:radial-gradient(circle at 40% 38%,#e8e6ff 0,#fff 55%,transparent 71%);box-shadow:0 28px 70px rgba(0,0,0,.08)}
+    body.light .project-card,body.light .skills-grid article{box-shadow:0 12px 35px rgba(0,0,0,.045);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    body.light .button-primary{background:#1d1d1f;color:#fff}body.light .brand-mark{border-color:#1d1d1f}body.light .noise{opacity:.018}
+    @media (pointer:fine) and (prefers-reduced-motion:no-preference){body.has-custom-cursor,body.has-custom-cursor a,body.has-custom-cursor button{cursor:none}.cursor-dot,.cursor-ring{position:fixed;left:0;top:0;border-radius:50%;pointer-events:none;z-index:100;transform:translate(-50%,-50%);opacity:0;transition:width .2s,height .2s,background .2s,opacity .2s}.cursor-dot{width:7px;height:7px;background:#5e5ce6}.cursor-ring{width:31px;height:31px;border:1px solid rgba(94,92,230,.6)}body.has-custom-cursor.cursor-visible .cursor-dot,body.has-custom-cursor.cursor-visible .cursor-ring{opacity:1}body.has-custom-cursor.cursor-active .cursor-dot{width:11px;height:11px;background:#1d1d1f}body.has-custom-cursor.cursor-active .cursor-ring{width:48px;height:48px;border-color:#1d1d1f;background:rgba(255,255,255,.28)}}
+    .splash{display:none}@media (prefers-reduced-motion:no-preference){.js .splash{display:flex;position:fixed;inset:0;z-index:200;align-items:center;justify-content:center;overflow:hidden;background:#0d0e14;color:#f5f5f7}.splash::before,.splash::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.18);animation:splash-orbit 2s cubic-bezier(.22,1,.36,1) forwards}.splash::before{width:min(76vw,720px);aspect-ratio:1}.splash::after{width:min(48vw,440px);aspect-ratio:1;border-color:rgba(167,139,250,.65);transform:rotate(48deg)}.splash-inner{position:relative;text-align:center;z-index:1}.splash-mark{width:76px;height:76px;display:grid;place-items:center;margin:0 auto 20px;border:1px solid #d7ff57;border-radius:50%;color:#d7ff57;font:16px "DM Mono",monospace;animation:splash-mark .95s cubic-bezier(.34,1.56,.64,1) both}.splash p{margin:0;font:10px "DM Mono",monospace;letter-spacing:.22em}.splash-line{width:156px;height:1px;margin:17px auto 0;background:linear-gradient(90deg,transparent,#d7ff57,transparent);transform-origin:left;animation:splash-line .9s .3s both}.splash.is-leaving{animation:splash-out .8s cubic-bezier(.76,0,.24,1) forwards}.js:not(.intro-complete) .site-header,.js:not(.intro-complete) .hero-copy,.js:not(.intro-complete) .hero-art,.js:not(.intro-complete) .scroll-cue{opacity:0}.js.intro-complete .site-header{animation:intro-up .7s .05s both}.js.intro-complete .hero-copy{animation:intro-up .8s .18s both}.js.intro-complete .hero-art{animation:intro-orbit 1.15s .35s cubic-bezier(.22,1,.36,1) both}.js.intro-complete .scroll-cue{animation:intro-up .6s .62s both}@keyframes splash-mark{from{opacity:0;transform:scale(.25) rotate(-80deg)}to{opacity:1;transform:scale(1) rotate(0)}}@keyframes splash-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes splash-orbit{from{opacity:0;transform:scale(.4) rotate(0)}to{opacity:1;transform:scale(1) rotate(180deg)}}@keyframes splash-out{to{clip-path:circle(0% at 50% 50%);visibility:hidden}}@keyframes intro-up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}@keyframes intro-orbit{from{opacity:0;transform:scale(.72) rotate(-18deg)}to{opacity:1;transform:scale(1) rotate(0)}}.js.intro-complete .hero-art .orb-one{animation:float-one 5s ease-in-out infinite}.js.intro-complete .hero-art .orb-two{animation:float-two 6s ease-in-out infinite}.js.intro-complete .hero-art .orbit-one{animation:spin 18s linear infinite}.js.intro-complete .hero-art .orbit-two{animation:spin 13s linear infinite reverse}@keyframes float-one{50%{transform:translate(18px,14px)}}@keyframes float-two{50%{transform:translate(-16px,-13px)}}@keyframes spin{to{transform:rotate(413deg)}}}@media (prefers-reduced-motion:reduce){.splash{display:none!important}}
+    @media (min-width:761px) and (max-width:1100px){.hero{min-height:820px;padding-top:35px;padding-bottom:55px}.site-header{padding:0 40px}.hero-art{width:min(380px,100%)}}
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="splash" aria-hidden="true"><div class="splash-inner"><div class="splash-mark">●</div><p>THE RIDDLER</p><div class="splash-line"></div></div></div>
+  <div class="noise" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="#top" class="brand" aria-label="Homepage"><span class="brand-mark">●</span><span>Home</span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+    <nav id="site-nav" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#projects-section">Projects</a><a href="#contact">Contact</a><a href="meme/">Content</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle colour theme"><span aria-hidden="true">◐</span></button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> Available for thoughtful collaborations</p>
+        <h1>Greetings,<br><em>reader.</em></h1>
+        <p class="intro">Seems like you actually clicked on my link. Anyways, I assume you already know me considering you have access to this site. If you don't, scroll down and learn about me yourself.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#contact">Start a conversation <span>↗</span></a><a class="text-link" href="#projects-section">See projects <span>↓</span></a></div>
+      </div>
+      <div class="hero-art reveal" aria-label="An abstract orbital illustration" role="img">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb-core"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <p class="orbit-label">DESIGN × CODE<br>HUMAN × SYSTEM</p>
+      </div>
+      <p class="scroll-cue">SCROLL TO EXPLORE <span>↓</span></p>
+    </section>
+
+    <section class="section split-section" id="about">
+      <div class="section-kicker reveal"><span>01</span><p>About</p></div>
+      <div class="about-content reveal">
+        <h2>A little more<br>than a job title.</h2>
+        <div class="about-body"><p>I’m a developer and curious maker who enjoys building practical software, experimenting with systems, and learning how things work.</p><p>My projects move between desktop AI tools, Arduino automation, and developer utilities—usually with an eye on making technology more approachable.</p></div>
+        <div class="interest-list" aria-label="Interests"><span>✦ Python</span><span>✦ Digital design</span><span>✦ Linux</span><span>✦ Gaming</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-kicker reveal"><span>02</span><p>Toolkit</p></div>
+      <div class="skills-grid reveal">
+        <article><span class="skill-icon">◈</span><h3>Design</h3><p>Adobe Photoshop</p></article>
+        <article><span class="skill-icon">&lt;/&gt;</span><h3>Development</h3><p>Python · Arduino · C++</p></article>
+        <article><span class="skill-icon">⌘</span><h3>Systems</h3><p>Linux system administration</p></article>
+      </div>
+    </section>
+
+    <section class="section work-section" id="projects-section">
+      <div class="section-heading reveal"><div class="section-kicker"><span>03</span><p>Projects</p></div><p class="section-note">A small archive of things I have made.</p></div>
+      <div class="projects-grid" id="projects" aria-live="polite">
+        <noscript><p class="no-script-projects">Enable JavaScript to view the project collection.</p></noscript>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <p class="eyebrow reveal">04 — Contact</p>
+      <h2 class="reveal">Have an idea with<br><em>some gravity?</em></h2>
+      <p class="contact-intro reveal">I’m always happy to hear about an interesting problem, a good collaboration, or a shared curiosity.</p>
+      <a class="email-link reveal" id="email-link" href="mailto:yashwin.b.310@gmail.com">yashwin.b.310@gmail.com <span>↗</span></a>
+      <div class="contact-bottom reveal"><button id="copy-email" class="copy-button" type="button">Copy email <span aria-hidden="true">⧉</span></button><div class="social-links"><a href="https://github.com/TheRiddler2?tab=repositories" rel="noopener noreferrer" target="_blank">GitHub ↗</a><a href="https://instagram.com/yash_w1n_" rel="noopener noreferrer" target="_blank">Instagram ↗</a><a href="https://steamcommunity.com/id/D3ad_Eye3" rel="noopener noreferrer" target="_blank">Steam ↗</a></div></div>
+      <!-- For real submissions on static hosting, replace the mailto flow with a vetted third-party form service. Never put secret keys in this page. -->
+    </section>
+  </main>
+  <footer><p>© <span id="year">2026</span> Yashwin</p><p>Designed to be edited, made to be shared.</p><a href="#top" aria-label="Back to top">↑</a></footer>
+  <script src="assets/js/projects.js"></script><script src="assets/js/main.js"></script>
+</body>
+</html>

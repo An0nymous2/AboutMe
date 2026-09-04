@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex"><title>404 — Are you lost?</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body{min-height:100vh;display:grid;place-items:center;padding:24px;background:#f5f5f7;color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif}.lost{max-width:680px;text-align:center}.code{font:700 clamp(7rem,25vw,16rem)/.8 -apple-system,BlinkMacSystemFont,sans-serif;letter-spacing:-.12em;margin:0;color:#1d1d1f}.lost h1{font-size:clamp(2rem,5vw,4rem);margin:24px 0 10px;letter-spacing:-.07em}.lost p{max-width:430px;margin:0 auto 28px;color:#6e6e73;font-size:17px}.lost .button-primary{background:#1d1d1f;color:#fff;border-radius:999px;padding:14px 22px}.orbit{position:fixed;width:540px;height:540px;border:1px solid rgba(94,92,230,.28);border-radius:50%;z-index:-1}.dot{position:fixed;width:18px;height:18px;border-radius:50%;background:#5e5ce6;box-shadow:0 0 38px #5e5ce6;z-index:-1}.one{transform:translate(220px,-170px)}.two{transform:translate(-210px,180px)}@media (pointer:fine) and (prefers-reduced-motion:no-preference){body.cursor-on,body.cursor-on a{cursor:none}.cursor-dot,.cursor-ring{position:fixed;left:0;top:0;border-radius:50%;pointer-events:none;z-index:10;transform:translate(-50%,-50%);opacity:0}.cursor-dot{width:7px;height:7px;background:#5e5ce6}.cursor-ring{width:31px;height:31px;border:1px solid rgba(94,92,230,.7);transition:width .2s,height .2s,opacity .2s}body.cursor-visible .cursor-dot,body.cursor-visible .cursor-ring{opacity:1}body.cursor-link .cursor-ring{width:48px;height:48px}}
+  </style>
+</head>
+<body>
+  <div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+  <main class="lost"><p class="code">404</p><h1>Are you lost?</h1><p>This page wandered off, joined a band, and refuses to answer its messages.</p><a class="button button-primary" href="index.html">Take me home →</a></main>
+  <script>
+    if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring'); let x=0,y=0,rx=0,ry=0;
+      document.body.classList.add('cursor-on');
+      document.addEventListener('pointermove', e => { x=e.clientX;y=e.clientY;dot.style.left=x+'px';dot.style.top=y+'px';document.body.classList.add('cursor-visible'); });
+      document.addEventListener('pointerover', e => document.body.classList.toggle('cursor-link', Boolean(e.target.closest('a'))));
+      const animate = () => { rx+=(x-rx)*.16;ry+=(y-ry)*.16;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animate); }; animate();
+    }
+  </script>
+</body>
+</html>

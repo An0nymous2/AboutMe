@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Important Information."><title>Important Information</title>
+  <style>
+    :root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5f5f7;background:#08090c}*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 0,#202130 0,#08090c 58%)}main{text-align:center;width:min(720px,100%)}a{color:#f5f5f7}.back{position:fixed;top:22px;left:25px;text-decoration:none;font-size:14px;color:#b8b8c0}.card{background:#15161c;border:1px solid rgba(255,255,255,.12);border-radius:32px;padding:20px;box-shadow:0 28px 75px rgba(0,0,0,.35)}.meme{border-radius:21px;display:block;overflow:hidden;background:#0d0e12;position:relative;border:1px solid rgba(255,255,255,.12);line-height:0}.meme img{width:100%;height:auto;display:block;transition:transform .45s ease,filter .45s ease}.meme:hover img{transform:scale(1.025);filter:brightness(1.08)}.caption{font-size:13px;color:#9898a4;margin:25px 0 0}.title{font-size:clamp(2rem,5vw,3.6rem);letter-spacing:-.07em;margin:0 0 22px}@media (pointer:fine) and (prefers-reduced-motion:no-preference){body.cursor-on,body.cursor-on a{cursor:none}.cursor-dot,.cursor-ring{position:fixed;left:0;top:0;border-radius:50%;pointer-events:none;z-index:10;transform:translate(-50%,-50%);opacity:0}.cursor-dot{width:7px;height:7px;background:#a78bfa}.cursor-ring{width:31px;height:31px;border:1px solid rgba(167,139,250,.72);transition:width .2s,height .2s,opacity .2s}body.cursor-visible .cursor-dot,body.cursor-visible .cursor-ring{opacity:1}body.cursor-link .cursor-ring{width:48px;height:48px}}
+    .doom-button{display:inline-flex;align-items:center;gap:10px;margin-top:24px;padding:12px 18px;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:linear-gradient(135deg,#7d201f,#351014);box-shadow:0 10px 28px rgba(0,0,0,.28);font:700 12px ui-monospace,SFMono-Regular,monospace;letter-spacing:.06em;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease;cursor:pointer;color:#fff}.doom-button:hover{transform:translateY(-3px);box-shadow:0 15px 34px rgba(125,32,31,.35)}.doom-button span{color:#ffb5a9;font-size:16px}.doom-overlay[hidden]{display:none}.doom-overlay{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.88);backdrop-filter:blur(16px)}.doom-window{width:min(1100px,100%);height:min(760px,calc(100vh - 40px));position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.18);border-radius:18px;background:#000;box-shadow:0 35px 100px rgba(0,0,0,.55)}.doom-player{width:100%;height:100%;background:#000}.doom-error{height:100%;display:grid;place-items:center;padding:30px;text-align:center;color:#d4d4dc;font:14px -apple-system,BlinkMacSystemFont,sans-serif}.doom-error a{color:#ffb5a9}.doom-close{position:absolute;right:13px;top:13px;z-index:2;width:36px;height:36px;border:1px solid rgba(255,255,255,.28);border-radius:50%;background:rgba(10,10,12,.8);color:#fff;cursor:pointer;font-size:19px}.doom-close:focus-visible,.doom-button:focus-visible{outline:3px solid #a78bfa;outline-offset:3px}
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← Back to reality</a>
+  <div class="cursor-dot" aria-hidden="true"></div><div class="cursor-ring" aria-hidden="true"></div>
+  <main><h1 class="title">Important Information</h1><div class="card"><a class="meme" href="https://youtu.be/dQw4w9WgXcQ?si=N3uJDnQNqHPNm92H" target="_blank" rel="noopener noreferrer" aria-label="Open important information"><img src="assets/images/important-information.png" alt="A Discord conversation suggesting this image for a secret portfolio section"></a></div><p class="caption">Yes, very professional.</p><button class="doom-button" id="play-doom" type="button"><span>⌘</span> Play Doom</button></main>
+  <section class="doom-overlay" id="doom-overlay" aria-label="Doom game player" aria-modal="true" role="dialog" hidden><div class="doom-window"><button class="doom-close" id="close-doom" type="button" aria-label="Close Doom">×</button><div class="doom-player" id="doom-player"></div></div></section>
+  <script>
+    const playDoom = document.querySelector('#play-doom'), doomOverlay = document.querySelector('#doom-overlay'), closeDoom = document.querySelector('#close-doom'), doomPlayer = document.querySelector('#doom-player');
+    let doomStarted = false, doomLoading;
+    const showDoomError = () => { doomPlayer.innerHTML = '<p class="doom-error">The game runtime could not load. <a href="https://dos.zone/doom-dec-1993/" target="_blank" rel="noopener noreferrer">Open Doom directly</a></p>'; };
+    const startDoom = async () => {
+      if (doomStarted) return;
+      doomPlayer.innerHTML = '<p class="doom-error">Loading Doom…</p>';
+      if (!doomLoading) doomLoading = new Promise((resolve, reject) => { const css = document.createElement('link'), script = document.createElement('script'); css.rel = 'stylesheet'; css.href = 'https://br.cdn.dos.zone/js-dos/latest/js-dos.css'; document.head.append(css); script.src = 'https://br.cdn.dos.zone/js-dos/latest/js-dos.js'; script.onload = resolve; script.onerror = reject; document.head.append(script); });
+      try { await doomLoading; emulators.pathPrefix = 'https://br.cdn.dos.zone/js-dos/latest/'; doomPlayer.innerHTML = ''; await Dos(doomPlayer).run('https://cdn.dos.zone/custom/dos/doom.jsdos'); doomStarted = true; } catch { showDoomError(); }
+    };
+    const closeGame = () => { doomOverlay.hidden = true; playDoom.focus(); };
+    playDoom.addEventListener('click', () => { doomOverlay.hidden = false; closeDoom.focus(); startDoom(); });
+    closeDoom.addEventListener('click', closeGame);
+    document.addEventListener('keydown', event => { if (event.key === 'Escape' && !doomOverlay.hidden) closeGame(); });
+    if (matchMedia('(pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const dot = document.querySelector('.cursor-dot'), ring = document.querySelector('.cursor-ring'); let x=0,y=0,rx=0,ry=0;
+      document.body.classList.add('cursor-on');
+      document.addEventListener('pointermove', e => { x=e.clientX;y=e.clientY;dot.style.left=x+'px';dot.style.top=y+'px';document.body.classList.add('cursor-visible'); });
+      document.addEventListener('pointerover', e => document.body.classList.toggle('cursor-link', Boolean(e.target.closest('a'))));
+      const animate = () => { rx+=(x-rx)*.16;ry+=(y-ry)*.16;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animate); }; animate();
+    }
+  </script>
+</body>
+</html>
